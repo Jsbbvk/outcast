@@ -202,6 +202,7 @@ io.on('connection', function(socket) {
         rooms[roomid].player[id-1].answer = a;
         io.to(roomid).emit('player answered', {
             id: id,
+            name: rooms[roomid].player[id-1].name,
             answer: a
         });
         var pFinish = true;
@@ -248,6 +249,9 @@ io.on('connection', function(socket) {
             console.log("ID: " + p.id + " Q: " + p.questionPartner.id + " A: " + p.answerPartner.id);
         }
         */
+        for (var b = 0; b < rooms[roomid].player.length;b++) {
+          rooms[roomid].player[b].isOutcast = false;
+        }
         var aN = parseInt(Math.random()*rooms[roomid].player.length);
         rooms[roomid].outcastID = aN +1;
         rooms[roomid].player[aN].isOutcast = true;
