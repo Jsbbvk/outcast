@@ -34,7 +34,7 @@ var categories = [
           "Rome",
           "Vietnam",
           "Uganda"
-          ];
+          ]
     },
     {
       category: "Food Locations",
@@ -69,7 +69,7 @@ var categories = [
         "Seven Eleven",
         "Red Lobster",
         "Milk Tea",
-        ];
+        ]
     },
     {
       category: "Tourists Attractions",
@@ -104,7 +104,7 @@ var categories = [
         "Palace of Versailles",
         "Buckingham Palace",
         "Taj Mahal",
-        ];
+        ]
     },
     {
       category: "Movies/Films/Shows",
@@ -138,7 +138,7 @@ var categories = [
         "Godzilla",
         "Mulan",
         "Alice in Wonderland",
-        ];
+        ]
     }
 ];
 
