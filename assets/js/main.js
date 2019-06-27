@@ -255,6 +255,7 @@ function displayAnswerDisplay() {
 }
 
 function displayPQA() {
+    $('#endGameButton').css('display', 'none');
     state = DISPLAYP;
     socket.removeAllListeners('player answered');
     socket.removeAllListeners('player asked');
@@ -264,6 +265,7 @@ function displayPQA() {
     socket.emit('get room info', roomID, function(rm) {
         $('#playerCategory').text(rm.category);
         $('#playerTopic').text(rm.topic);
+        $('#playerFakeTopic').text(rm.fakeTopic);
     });
 
     socket.emit('get players', roomID, function(pl){
@@ -309,6 +311,7 @@ function displayPQA() {
         }
     });
 
+
     socket.on('player answered', function(pl) {
         console.log('Player answered: ' +pl.id);
         socket.emit('get player info', roomID, nameID, function(p) {
@@ -321,7 +324,7 @@ function displayPQA() {
     socket.on('player asked', function(pl) {
         console.log("Player asked: " + pl.id);
         $('#pQ'+pl.id).fadeOut(600, function(){
-            $('#pQ'+pl.id).text("[Hidden]: " +pl.question);
+            $('#pQ'+pl.id).text(((pl.id==nameID)?playerName+" (You): ": "[Hidden]: ") +pl.question);
         }).fadeIn(600);
     });
 
@@ -399,13 +402,3 @@ function displayResults() {
     });
 
 }
-
-
-
-
-
-
-
-
-
-

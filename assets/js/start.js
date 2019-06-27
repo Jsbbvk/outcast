@@ -354,7 +354,7 @@ function displayWaitingRoom() {
     document.getElementById("waiting-player-list").innerHTML="";
 
     socket.emit("get players", roomID, function(p){
-        console.log(p);
+        //console.log(p);
         displayPlayersInWaiting(p);
     });
 
@@ -454,8 +454,3 @@ function displayDBPlayers(pass, r) {
         console.log(p);
     });
 }
-
-
-
-
-

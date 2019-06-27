@@ -192,6 +192,7 @@ io.on('connection', function(socket) {
         rooms[roomid].player[id-1].answerPartner.socket.emit('question asked', q);
         io.to(roomid).emit('player asked', {
             id: id,
+            name: rooms[roomid].player[id-1].name,
             question: q
         });
         cb&&cb();
