@@ -139,16 +139,74 @@ var categories = [
         "Mulan",
         "Alice in Wonderland",
         ]
+    },
+    {
+        category: "States",
+        topics: [
+            "California",
+            "Nevada",
+            "Oregon",
+            "Washington",
+            "Idaho",
+            "Montana",
+            "Arizona",
+            "New Mexico",
+            "Kansas",
+            "Arkansas",
+            "Alabama",
+            "Texas",
+            "Tennessee",
+            "Louisiana",
+            "Mississippi",
+            "North Carolina",
+            "South Carolina",
+            "New Jersey",
+            "New York",
+            "Massachusetts",
+            "Connecticut",
+            "Georgia",
+            "Florida",
+            "Hawaii",
+            "Pennsylvania",
+            "Virginia ",
+            "Michigan",
+            "Minnesota",
+            "Ohio",
+            "Indiana",
+            "Colorado",
+            "Illinois",
+            "Alaska",
+            "Maryland",
+            "Missouri",
+            "Wisconsin",
+            "Utah ",
+            "Maine ",
+            "Kentucky",
+            "Iowa",
+            "Oklahoma",
+            "Rhode Island",
+            "Nebraska",
+            "Delaware",
+            "Vermont",
+            "North Dakota",
+            "South Dakota",
+            "New Hampshire",
+            "West Virginia",
+            "Wyoming",
+            "Florida",
+            "Maryland",
+        ]
     }
 ];
 
 module.exports = {
-    getRandomCategory: function() {
+    getRandomCategory: function(prev) {
         var randN = parseInt(categories.length*Math.random());
 
         var a = [];
         for (var i = 0; i < categories[randN].topics.length; i++) {
-            a.push(i);
+            if(!prev.includes(categories[randN].topics[i])) a.push(i);
+            else if (0.7 <= Math.random()) a.push(i);
         }
         for (var i = 0; i < a.length; i++) {
             var j = a[i];

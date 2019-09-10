@@ -126,6 +126,10 @@ body {
     font-size: 20px;
     cursor: text;
     transition: .25s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .input-1 {
     display: block;
@@ -201,8 +205,25 @@ body {
     cursor: pointer;
 }
 
+#playerDisplay_information {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 2px 10px 20px 10px;
+    border: 2px solid #e5c690;
+    user-select: none;
+}
+
+#playerDisplay_information_text {
+    font-size: 0.65rem;
+    text-align: left;
+}
+
 
 @media only screen and (min-width: 600px) {
+    #playerDisplay_information {
+        max-width: 500px;
+    }
+
     .playerQA {
         max-width: 650px;
     }

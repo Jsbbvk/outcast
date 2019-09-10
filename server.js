@@ -27,6 +27,7 @@ class Room {
         this.category = "";
         this.isRandom = true;
         this.outcastID = -1;
+        this.prevTopics = [];
     }
 }
 
@@ -259,13 +260,14 @@ io.on('connection', function(socket) {
 
         var acat;
         if (rooms[roomid].isRandom) {
-            acat = categories.getRandomCategory();
+            acat = categories.getRandomCategory(rooms[roomid].prevTopics);
         } else {
             acat = categories.getCategory(rooms[roomid].category);
         }
         rooms[roomid].fakeTopic = acat.fakeTopic;
         rooms[roomid].topic = acat.topic;
         rooms[roomid].category = acat.category;
+        rooms[roomid].prevTopics = acat.topic;
         io.to(roomid).emit('game start');
     });
 

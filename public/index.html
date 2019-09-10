@@ -47,10 +47,16 @@
     </div>
     <div id="playerDisplay" class="text-center">
         <p style="font-size: 0.9rem;">Actual Information</p>
-        <h4>You are <b><span id="playerRole"></span></b></h4>
-        <h6>Category: <b><span id="playerCategory"></span></b></h6>
-        <h5>Topic: <b><span id="playerTopic"></span></b></h5>
-        <h6 class="mb-5">Fake Topic: <b><span id="playerFakeTopic"></span></b></h6>
+        <div id="playerDisplay_information" class="mb-5">
+            <p id="playerDisplay_information_text">Double click to show</p>
+            <div id="playerDisplay_information_div" style="display:none">
+                <h4>You are <b><span id="playerRole"></span></b></h4>
+                <h6>Category: <b><span id="playerCategory"></span></b></h6>
+                <h5>Topic: <b><span id="playerTopic"></span></b></h5>
+                <h6>Fake Topic: <b><span id="playerFakeTopic"></span></b></h6>
+            </div>
+            <h3 id="playerDisplay_information_hidden"">Hidden</h3>
+        </div>
         <h6 class="mb-3" id="pDText">Questions</h6>
         <div id="playersQDisplay" class="px-3 mb-5">
         </div>
@@ -209,6 +215,8 @@
                 <option  value="Food Locations">Food Locations</option>
                 <option  value="Tourists Attractions">Tourists Attractions</option>
                 <option  value="Movies/Films/Shows">Movies/Films/Shows</option>
+                <option  value="States">States</option>
+
             </select>
         </div>
         <button class="button-1" id="option-save-button">Save</button>
