@@ -208,6 +208,9 @@ module.exports = {
             if(!prev.includes(categories[randN].topics[i])) a.push(i);
             else if (0.7 <= Math.random()) a.push(i);
         }
+        if (a.length == 0) {
+            a = categories[randN].topics.splice();
+        }
         for (var i = 0; i < a.length; i++) {
             var j = a[i];
             var n = parseInt(Math.random()*a.length);
