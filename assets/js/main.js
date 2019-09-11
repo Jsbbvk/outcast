@@ -265,7 +265,7 @@ function displayPQA() {
     socket.emit('get room info', roomID, function(rm) {
         $('#playerCategory').text(rm.category);
         $('#playerTopic').text(rm.topic);
-        $('#playerFakeTopic').text(rm.fakeTopic);
+        //$('#playerFakeTopic').text(rm.fakeTopic);
     });
 
     socket.emit('get players', roomID, function(pl){
