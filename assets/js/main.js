@@ -237,12 +237,14 @@ function displayAnswerDisplay() {
             $('#answerWrong').css('display', 'block');
             return;
         }
+        /*
         if (qVal.charAt(qVal.length-1) != '.') {
             $('#answerWrong').text("End answer with Period '.'");
             $('#answerWrong').css('display', 'block');
             $('#answerQButton').fadeOut(600);
             return;
         }
+        */
         $(this).off('click');
 
         console.log("Answer: " + qVal);
