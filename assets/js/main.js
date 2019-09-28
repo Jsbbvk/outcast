@@ -256,6 +256,7 @@ function displayAnswerDisplay() {
 
 }
 
+var ftp = "";
 function displayPQA() {
     if (infoVisible) {
         hideInfo();
@@ -270,6 +271,7 @@ function displayPQA() {
     socket.emit('get room info', roomID, function(rm) {
         $('#playerCategory').text(rm.category);
         $('#playerTopic').text(rm.topic);
+        ftp = rm.fakeTopic;
         if (isOutcast) {
             $('#playerFakeTopicH').css('display','block');
             $('#playerFakeTopic').text(rm.fakeTopic);
@@ -375,6 +377,9 @@ function displayResults() {
     $('#pDText').fadeOut(600, function(){
         $('#pDText').text("Results");
     }).fadeIn(600);
+
+    $('#playerFakeTopicH').css('display','block');
+    $('#playerFakeTopic').text(ftp);
 
     socket.emit('get players', roomID, function(pl) {
         $('#playersQDisplay').fadeOut(600, function() {
