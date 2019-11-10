@@ -151,9 +151,9 @@ io.on('connection', function(socket) {
         }
 
         for (var i = id; i < pl.length; i++) {
-            rooms[roomid].player[id-1].name = pl[i].name;
-            rooms[roomid].player[id-1].id = pl[i].id-1;
-            rooms[roomid].player[id-1].socket = pl[i].socket;
+            rooms[roomid].player[i-1].name = pl[i].name;
+            rooms[roomid].player[i-1].id = pl[i].id-1;
+            rooms[roomid].player[i-1].socket = pl[i].socket;
         }
 
 
